@@ -1,0 +1,111 @@
+---
+import ResponsiveName from "../components/responsive-name.astro";
+import { Image } from "astro:assets";
+import headshotImage from "../images/headshot.jpg";
+
+const navItems = [
+  {
+    path: "/bio",
+    label: "Full Bio",
+  },
+  {
+    path: "/education",
+    label: "Education",
+  },
+  {
+    path: "/tutor",
+    label: "Tutor",
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Header</title>
+  </head>
+  <body class="px-6 py-8 antialiased">
+    <header class="flex flex-row items-center justify-between">
+      <!-- Group 1: Image and Name -->
+      <div class="flex flex-row items-center">
+        <Image
+          src={headshotImage}
+          alt="Headshot"
+          class="rounded-full w-10 h-10 mr-3 |"
+        />
+        <ResponsiveName />
+      </div>
+
+      <!-- Group 2: Hamburger Button and Nav Links -->
+      <div class="relative block md:hidden">
+        <button id="hamburger" class="focus:outline-none">
+          <svg
+            id="hamburger-icon"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            class="text-black h-6 w-6 block"
+          >
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+          </svg>
+          <svg
+            id="close-icon"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            class="text-black h-6 w-6 hidden"
+          >
+            <path
+              d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"
+            ></path>
+          </svg>
+        </button>
+        <div
+          id="nav-links"
+          class="hidden absolute right-0 mt-2 py-2 w-48 bg-gray-100 rounded-lg shadow-xl"
+        >
+          {
+            navItems.map((item) => (
+              <a
+                href={item.path}
+                class="block px-4 py-2 text-gray-800 hover:underline"
+              >
+                {item.label}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </header>
+    <main></main>
+    <footer></footer>
+  </body>
+</html>
+
+<script>
+  function toggleHidden(x: HTMLElement) {
+    x.classList.toggle("hidden");
+  }
+
+  const hamburger = document.getElementById("hamburger");
+  if (!hamburger) {
+    throw new Error("Hamburger button not found");
+  }
+
+  hamburger.addEventListener("click", function () {
+    var navLinks = document.getElementById("nav-links");
+    var hamburgerIcon = document.getElementById("hamburger-icon");
+    var closeIcon = document.getElementById("close-icon");
+
+    if (!navLinks || !hamburgerIcon || !closeIcon) {
+      throw new Error("One or more elements not found");
+    }
+
+    // Toggle the display of the navigation links
+    toggleHidden(navLinks);
+    toggleHidden(hamburgerIcon);
+    toggleHidden(closeIcon);
+  });
+</script>
