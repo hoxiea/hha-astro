@@ -1,14 +1,17 @@
 ---
+/*
+ * This component is used to render the navigation items in the header.
+ * It only renders the links when the screen size is "tailwind-small" or larger.
+ */
 import { type NavItem } from "../../types";
+import HeaderLink from "./header-link.astro";
 const { navItems } = Astro.props;
 ---
 
-<nav class="hidden md:flex space-x-4">
+<nav class="hidden sm:flex space-x-4">
   {
     navItems.map((item: NavItem) => (
-      <a href={item.path} class="text-gray-800 hover:underline">
-        {item.label}
-      </a>
+      <HeaderLink href={item.path}>{item.label}</HeaderLink>
     ))
   }
 </nav>

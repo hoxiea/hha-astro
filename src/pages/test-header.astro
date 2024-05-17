@@ -32,24 +32,26 @@ const navItems: NavItem[] = [
     <title>Test Header</title>
   </head>
   <body class="px-8 py-10 antialiased">
-    <header class="flex flex-row items-center justify-between">
-      <!-- Group 1: Image and Name -->
-      <div class="flex flex-row items-center">
+    <header class="flex flex-row items-center justify-between w-full">
+      <!-- Group 1: Image -->
+      <div class="flex-shrink-0 mr-3 sm:mr-5">
         <Image
           src={headshotImage}
           alt="Headshot"
-          class="rounded-full w-10 h-10 mr-3 |"
+          class="rounded-full w-10 h-10 | sm:w-16 sm:h-16"
         />
-        <ResponsiveName />
       </div>
 
-      <!-- Group 2a: Hamburger Button and Nav Links -->
-      <HamburgerNavMenu navItems={navItems} />
+      <!-- Group 2a: Site Name + Hamburger Button and Nav Links -->
+      <div
+        class="flex flex-grow justify-between items-between sm:flex-col sm:items-start"
+      >
+        <ResponsiveName />
+        <HamburgerNavMenu navItems={navItems} />
+        <PageLinks navItems={navItems} />
+      </div>
 
       <!-- Group 2b: Page Links -->
-      <PageLinks navItems={navItems} />
     </header>
-    <main></main>
-    <footer></footer>
   </body>
 </html>
