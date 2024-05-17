@@ -1,0 +1,14 @@
+---
+import { type NavItem } from "../../types";
+const { navItems } = Astro.props;
+---
+
+<nav class="hidden md:flex space-x-4">
+  {
+    navItems.map((item: NavItem) => (
+      <a href={item.path} class="text-gray-800 hover:underline">
+        {item.label}
+      </a>
+    ))
+  }
+</nav>
