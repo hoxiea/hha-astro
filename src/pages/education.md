@@ -7,8 +7,8 @@ title: Education
 
 - Bradfield School of Computer Science
   - Software Systems: Behind the Abstractions (Summer 2023)
-    - Surveyed program execution, data encoding, assembly (x86-64), process virtual machines, interpreters and compilers, memory management, operating systems and system calls, file systems, VMs and containers, relational databases and indexes, networking, and distributed systems
-- Online courses:
+    - Program execution, data encoding, assembly (x86-64), process virtual machines, interpreters and compilers, memory management, operating systems and system calls, file systems, VMs and containers, relational databases and indexes, networking, and distributed systems
+- Online courses, including:
   - Algorithms: Design and Analysis (Stanford)
   - Programming Languages (UWash)
   - Machine Learning (Stanford)
@@ -27,7 +27,7 @@ title: Education
 ### [Statistics](https://statistics.berkeley.edu) at [UC Berkeley](http://berkeley.edu) (2010 - 2012)
 
 - PhD Coursework (Degree Incomplete)
-- GPA: 3.95 / 4.00 <span class="transcript-link">([transcript](/transcripts/cal_transcript.pdf))</span>
+- GPA: 3.95 / 4.00 <span class="transcript-link">([transcript](/pdfs/cal_transcript.pdf))</span>
 - Mathematics/Statistics coursework:
   - Applied Statistics with [Bin Yu](https://binyu.stat.berkeley.edu/)
   - Theoretical Statistics with [Haiyan Huang](https://www.stat.berkeley.edu/~hhuang/) and [Michael Jordan](https://people.eecs.berkeley.edu/~jordan/)
@@ -41,7 +41,7 @@ title: Education
 
 - M.A. in Mathematics, Specialty in Statistics
 - B.A. in Mathematics, Specialty in Statistics
-- Combined GPA: 3.97 / 4.00 <span class="transcript-link">([transcript](/transcripts/bu_transcript.pdf))</span>
+- Combined GPA: 3.97 / 4.00 <span class="transcript-link">([transcript](/pdfs/bu_transcript.pdf))</span>
 - Major GPA: 4.00 / 4.00
 - Technical coursework:
   - Probability, Mathematical Statistics, Stochastic Processes, Multivariate Statistical Analysis, Time Series Analysis, Linear Models, Generalized Linear Models, Nonparametric Statistics, Categorical Data Analysis, Mathematical Modeling for the Life Sciences, Computational Biology, Discrete Mathematics, Multivariate Calculus, Differential Equations, Real Analysis, Linear Algebra Honors

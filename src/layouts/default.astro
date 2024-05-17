@@ -15,9 +15,9 @@ const { title } = Astro.props;
     <title>{title ? `HHA - ${title}` : "HHAckerman"}</title>
   </head>
 
-  <body class="px-8 py-10 text-black leading-tight antialiased">
+  <body class="px-8 py-10 leading-tight antialiased">
     <ResponsiveHeader />
-    <main class="prose">
+    <main class="prose prose-a:hover:bold">
       <slot />
     </main>
   </body>
