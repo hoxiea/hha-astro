@@ -6,7 +6,8 @@ import Layout from "../layouts/default.astro";
   <h1 class="text-4xl">Hey there! 👋</h1>
   <p>
     I help students at top schools across the country succeed in quantitative
-    situations as a private tutor.
+    situations as a <a href="/tutor">private tutor</a>. You can learn more about
+    me <a href="/bio">here</a>.
   </p>
   <p>
     I'm also an occasional recreational mathematician with 2.4 degrees in
@@ -14,4 +15,17 @@ import Layout from "../layouts/default.astro";
     hope to one day create the best Calculus course in the world.
   </p>
   <p>Curious about how I work? Check out my uses page!</p>
+  <p>Thanks for stopping by!</p>
 </Layout>
+
+<style>
+  a {
+    text-decoration: underline;
+    text-decoration-color: gray;
+  }
+
+  h1,
+  p {
+    margin-bottom: 1rem; /* mb-4 */
+  }
+</style>

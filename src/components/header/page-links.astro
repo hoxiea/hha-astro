@@ -8,7 +8,7 @@ import HeaderLink from "./header-link.astro";
 const { navItems } = Astro.props;
 ---
 
-<nav class="hidden sm:flex space-x-4">
+<nav class="hidden sm:flex space-x-4 mt-2">
   {
     navItems.map((item: NavItem) => (
       <HeaderLink href={item.path}>{item.label}</HeaderLink>

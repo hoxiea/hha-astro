@@ -1,26 +1,9 @@
 ---
 import "@fontsource-variable/inter";
 
-const navItems = [
-  {
-    path: "/bio",
-    label: "Full Bio",
-  },
-  {
-    path: "/education",
-    label: "Education",
-  },
-  {
-    path: "/tutor",
-    label: "Tutor",
-  },
-];
+import ResponsiveHeader from "../components/header.astro";
 
-import { Image } from "astro:assets";
-import headshotImage from "../images/headshot.jpg";
-
-import Header from "../components/header-OLD.astro";
-import HeaderLink from "../components/header/header-link.astro";
+const { title } = Astro.props;
 ---
 
 <html lang="en">
@@ -29,155 +12,19 @@ import HeaderLink from "../components/header/header-link.astro";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>HHAckerman</title>
+    <title>{title ? `HHA - ${title}` : "HHAckerman"}</title>
   </head>
 
-  <body class="text-black leading-tight antialiased">
-    <div class="py-8 lg:py-16 px-6 md:px-16 lg:px-24">
-      <header class="relative z-20 flex justify-between items-center">
-        <div class="flex items-center max-w-full | md:block | lg:flex">
-          <a href="/" class="flex items-center no-underline">
-            <Image
-              src={headshotImage}
-              alt="Headshot of Hamilton Hoxie Ackerman"
-              class="h-10 w-10 md:h-12 md:w-12 lg:h-20 lg:w-20 rounded-full"
-            />
-          </a>
-
-          <div>
-            <a href="/" class="text-xl font-bold">Hamilton Hoxie Ackerman</a>
-            <nav
-              class="hidden md:flex mt-3 lg:mt-4 uppercase tracking-wide text-xs space-x-6"
-            >
-              {
-                navItems.map((item) => (
-                  <HeaderLink
-                    href={item.path}
-                    class="text-gray-500 font-semibold hover:text-black"
-                  >
-                    {item.label}
-                  </HeaderLink>
-                ))
-              }
-            </nav>
-            <div class="block md:hidden">
-              <button class="block">
-                <svg
-                  fill="black"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  class="block text-black h-6 w-6"
-                  style="display: block;"
-                  ><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"
-                  ></path></svg
-                >
-                <svg
-                  fill="black"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  class="text-black h-6 w-6 hidden"
-                  style="display: none;"
-                  ><path
-                    d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"
-                  ></path></svg
-                >
-              </button>
-            </div>
-            <button class="block md:hidden">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-            </button>
-          </div>
-        </div>
-      </header>
-
-      <main>
-        <slot />
-      </main>
-    </div>
+  <body class="px-8 py-10 text-black leading-tight antialiased">
+    <ResponsiveHeader />
+    <main class="prose">
+      <slot />
+    </main>
   </body>
 </html>
 
-<style is:global>
-  :root {
-    --color-gray-100: hsl(275, 30%, 95%);
-    --color-gray-200: hsl(275, 21%, 85%);
-    --color-gray-600: hsl(275, 11%, 43%);
-    --color-gray-700: hsl(275, 26%, 23%);
-    --color-gray-800: hsl(275deg 40% 20% / 1);
-    --color-gray-900: hsl(275deg 40% 10% / 1);
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-
-  html {
-    font-family:
-      "Inter",
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      Helvetica,
-      Arial,
-      sans-serif,
-      "Apple Color Emoji",
-      "Segoe UI Emoji",
-      "Segoe UI Symbol";
-    font-size: 16px;
-    line-height: 1.45;
-  }
-
-  body {
-    margin: 0;
-  }
-
-  :is(h1, h2, h3, h4, h5, h6) {
-    font-weight: 700;
-    line-height: 1.1;
-    margin: 1.5rem 0 0;
-  }
-
-  .block {
-    padding: 3rem max(5vw, calc((100% - 800px) / 2));
-  }
-
-  .big-link {
-    background-color: var(--color-gray-900);
-    border: 0;
-    border-radius: 0.25rem;
-    color: white;
-    display: inline-block;
-    font-size: 1rem;
-    font-weight: 700;
-    margin: 0.5rem 0 0;
-    padding: 0.5rem 1.25rem;
-    text-decoration: none;
-    transition: 150ms background-color linear;
-  }
-
-  .big-link:hover {
-    background-color: var(--color-gray-800);
-  }
-
-  .big-link:is(:active, :focus) {
-    outline: 2px solid var(--color-gray-900);
-    outline-offset: 4px;
+<style>
+  main {
+    max-width: 60ch;
   }
 </style>
-
-<script>
-  const hamburger = document.getElementById("hamburger");
-  const nav = document.getElementById("nav");
-
-  if (!hamburger || !nav) {
-    throw new Error("Could not find hamburger or nav element");
-  }
-
-  hamburger.addEventListener("click", () => {
-    nav.classList.toggle("nav-open");
-    hamburger.classList.toggle("hamburger-open");
-  });
-</script>

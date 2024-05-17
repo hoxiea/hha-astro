@@ -1,0 +1,11 @@
+---
+import Default from "./default.astro";
+const { frontmatter } = Astro.props;
+---
+
+<Default title={frontmatter.title}>
+  <h1>{frontmatter.title}</h1>
+  <section>
+    <slot />
+  </section>
+</Default>
