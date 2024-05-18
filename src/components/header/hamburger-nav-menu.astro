@@ -5,7 +5,11 @@ const { navItems } = Astro.props;
 
 <nav class="relative block align-center sm:hidden">
   <!-- Hamburger Button / X -->
-  <button id="hamburger" class="focus:outline-none">
+  <button
+    id="hamburger"
+    class="focus:outline-none"
+    aria-label="Toggle Page List"
+  >
     <svg
       id="hamburger-icon"
       fill="currentColor"
