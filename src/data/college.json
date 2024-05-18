@@ -1,0 +1,46 @@
+{
+  "id": "college",
+  "courseInfo": [
+    {
+      "subject": "Math / Stats",
+      "abbreviation": "Math",
+      "courses": [
+        "Calculus 1 & 2",
+        "Multivariate Calculus",
+        "Intro Statistics & Probability",
+        "Statistics for Business",
+        "Linear Regression"
+      ]
+    },
+    {
+      "subject": "Computer Science",
+      "abbreviation": "CompSci",
+      "courses": [
+        "Data Structures & Algorithms",
+        "Discrete / Finite Math",
+        "Web Systems",
+        "Software Engineering",
+        "Digital Systems"
+      ]
+    },
+    {
+      "subject": "Data Science / ML",
+      "abbreviation": "Data / ML",
+      "courses": [
+        "Intro to Data Science",
+        "Applied Machine Learning",
+        "Applied Data Analysis"
+      ]
+    },
+    {
+      "subject": "Other",
+      "abbreviation": "Other",
+      "courses": [
+        "Intro Microeconomics",
+        "Psychometrics",
+        "Econometrics",
+        "Operations & Supply Chain Mgmt"
+      ]
+    }
+  ]
+}

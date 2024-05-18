@@ -1,0 +1,36 @@
+{
+  "id": "highschool",
+  "courseInfo": [
+    {
+      "subject": "Math / Stats",
+      "abbreviation": "Math",
+      "courses": [
+        "Algebra 1 & 2",
+        "Geometry / Trigonometry",
+        "Pre-Calculus",
+        "Calculus AB & BC",
+        "Statistics AP"
+      ]
+    },
+    {
+      "subject": "Computer Science",
+      "abbreviation": "CompSci",
+      "courses": ["AP Computer Science A", "AP Computer Science Principles"]
+    },
+    {
+      "subject": "Standardized Tests",
+      "abbreviation": "SAT / ACT",
+      "courses": ["SAT (all sections)", "ACT (all sections)"]
+    },
+    {
+      "subject": "Other",
+      "abbreviation": "Other",
+      "courses": [
+        "Chemistry Regular / Honors",
+        "Biology Regular / Honors",
+        "Marine Biology",
+        "AP U.S. History"
+      ]
+    }
+  ]
+}
