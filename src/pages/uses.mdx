@@ -7,12 +7,13 @@ My computing setup has come a long way since the early 90s. I thought it would b
 
 ## The Desk
 
-import { Image } from "astro:assets";
-import deskImage from "../images/desk.jpg";
+import { Picture } from "astro:assets";
+import deskPicture from "../images/desk.jpg";
 
-<Image
-  src={deskImage}
+<Picture
+  src={deskPicture}
   alt="My desk setup in 2024, including a Macbook Pro, three 4K monitors, and various input devices."
+  formats={["webp", "avif", "jpg"]}
 />
 
 After a decade of using Mac Minis to avoid Apple laptop keyboards, I picked up a **Macbook Pro 16" (M2 Max, 32GB RAM, 1TB SSD)** in late 2023. Great machine! It mostly lives in clamshell mode, tucked into a Twelve South [BookArc stand](https://a.co/d/77WKi1e), but I love being able to use it around the house and outside when the weather is nice.

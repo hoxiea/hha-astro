@@ -2,8 +2,8 @@
 import ResponsiveName from "./header/responsive-name.astro";
 import HamburgerNavMenu from "./header/hamburger-nav-menu.astro";
 
-import { Image } from "astro:assets";
-import headshotImage from "../images/headshot.jpg";
+import { Picture } from "astro:assets";
+import headshotPicture from "../images/headshot.jpg";
 
 import { type NavItem } from "../types";
 import PageLinks from "./header/page-links.astro";
@@ -25,12 +25,13 @@ const navItems: NavItem[] = [
 ---
 
 <header class="flex flex-row items-center justify-between w-full mb-8">
-  <!-- Group 1: Image -->
+  <!-- Group 1: Headshot -->
   <div class="flex-shrink-0 mr-3 sm:mr-5">
     <a href="/">
-      <Image
-        src={headshotImage}
-        alt="Headshot"
+      <Picture
+        src={headshotPicture}
+        formats={["webp", "avif", "jpeg"]}
+        alt="A picture of me, the author of this site."
         class="rounded-full w-10 h-10 | sm:w-16 sm:h-16"
       /></a
     >
