@@ -21,11 +21,14 @@ const navItems: NavItem[] = [
     path: "/tutor",
     label: "Tutor",
   },
+  {
+    path: "/projects",
+    label: "Projects",
+  },
 ];
 ---
 
 <header class="flex flex-row items-center justify-between w-full mb-8">
-  <!-- Group 1: Headshot -->
   <div class="flex-shrink-0 mr-3 sm:mr-5">
     <a href="/">
       <Picture
@@ -37,7 +40,6 @@ const navItems: NavItem[] = [
     >
   </div>
 
-  <!-- Group 2a: Site Name + Hamburger Button and Nav Links -->
   <div
     class="flex flex-grow justify-between items-between sm:flex-col sm:items-start"
   >
@@ -45,6 +47,4 @@ const navItems: NavItem[] = [
     <HamburgerNavMenu navItems={navItems} />
     <PageLinks navItems={navItems} />
   </div>
-
-  <!-- Group 2b: Page Links -->
 </header>
