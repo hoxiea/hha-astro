@@ -1,9 +1,15 @@
 ---
-import "@fontsource-variable/inter";
-
 import ResponsiveHeader from "../components/header.astro";
 
 const { title } = Astro.props;
+const { pathname } = Astro.url;
+const isHomePage = pathname === "/";
+let pageTitle;
+if (isHomePage || !title) {
+  pageTitle = "HHAckerman";
+} else {
+  pageTitle = `HHAckerman: ${title}`;
+}
 ---
 
 <html lang="en">
@@ -33,7 +39,7 @@ const { title } = Astro.props;
       href="/favicon/favicon-16x16.png"
     />
     <link rel="manifest" href="/favicon/site.webmanifest" />
-    <title>{title ? `HHAckerman - ${title}` : "HHAckerman"}</title>
+    <title>{pageTitle}</title>
   </head>
 
   <body class="px-8 py-10 leading-tight antialiased">
