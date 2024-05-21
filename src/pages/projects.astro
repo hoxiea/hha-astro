@@ -1,7 +1,10 @@
 ---
 import Default from "../layouts/default.astro";
+
 import { getCollection } from "astro:content";
 const allProjects = await getCollection("projects");
+
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <Default title="Projects">
@@ -26,5 +29,5 @@ const allProjects = await getCollection("projects");
     }
   </div>
 
-  <p class="text-xl text-center">More coming soon!</p>
+  <p class="text-xl text-center">More projects coming soon!</p>
 </Default>
