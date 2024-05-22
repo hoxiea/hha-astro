@@ -6,25 +6,28 @@ linktext: Read more about my progress
 ---
 
 export const percentile_update = "May 2024";
-export const percentile = 0.587;
+export const numSolved = 146;
+export const percentile = 0.579;
 
 From the [Project Euler website](https://projecteuler.net/):
 
 > Project Euler is a series of challenging mathematical/computer programming problems that will require more than just mathematical insights to solve. Although mathematics will help you arrive at elegant and efficient methods, the use of a computer and programming skills will be required to solve most problems.
 
-I submitted my first solution to Project Euler in 2015, and I've worked on them occasionally since then. Here's an up-to-date look at my progress:
+Given my background in both mathematics and computer science, I'm a big fan of Project Euler! I submitted my first solution in 2015, and I've worked on them occasionally since then. Here's an up-to-date look at my progress:
 
 import { Image } from "astro:assets";
 
-<Image
-  src="https://projecteuler.net/profile/hoxiea2.png"
-  alt="My Project Euler progress"
-  width="200"
-  height="60"
-  class="justify-center"
-/>
+<div class="flex justify-center items-center">
+  <Image
+    src="https://projecteuler.net/profile/hoxiea2.png"
+    alt="My Project Euler progress"
+    width="200"
+    height="60"
+    class="m-3"
+  />
+</div>
 
-As of {percentile_update}, that's good enough to put me in the top {percentile}% of solvers. But it's less about the global statistics and more about the fun of approaching problems from different angles and perspectives until you have that **aha!** moment.
+As of {percentile_update}, {numSolved} solutions is good enough to put me in the top {percentile}% of solvers. But it's less about the global statistics and more about the fun of approaching problems from different angles and perspectives until you have that **aha!** moment.
 
 I made this progress based more on my Computer Science skills than my Math background - though I did take a couple of pure math courses as a Statistics major, I'm hardly a beast when it comes to number theory. But I've definitely learned a few things solving these problems, and I'm sure I'll learn more as I continue to hack away at them!
 
