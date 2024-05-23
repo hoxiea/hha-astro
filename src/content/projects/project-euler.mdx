@@ -8,6 +8,8 @@ linktext: Read more about my progress
 export const percentile_update = "May 2024";
 export const numSolved = 147;
 export const percentile = 0.569;
+export const nextMilestone =
+  numSolved % 10 === 0 ? numSolved + 10 : numSolved + (10 - (numSolved % 10));
 
 From the [Project Euler website](https://projecteuler.net/):
 
@@ -17,15 +19,18 @@ Given my background in both mathematics and computer science, I'm a big fan of P
 
 import { Image } from "astro:assets";
 
-<div class="flex justify-center items-center">
+<figure class="flex flex-col justify-center items-center">
   <Image
     src="https://projecteuler.net/profile/hoxiea2.png"
     alt="My Project Euler progress"
     width="200"
     height="60"
-    class="m-3"
+    class=""
   />
-</div>
+  <figcaption class="mt-0">
+    My Project Euler progress. Next stop: {nextMilestone}!
+  </figcaption>
+</figure>
 
 As of {percentile_update}, {numSolved} solutions is good enough to put me in the top {percentile}% of solvers. But it's less about the global statistics and more about the fun of approaching problems from different angles and perspectives until you have that **aha!** moment.
 
