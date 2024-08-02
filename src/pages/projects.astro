@@ -14,7 +14,9 @@ import { ViewTransitions } from "astro:transitions";
       allProjects.map((project) => (
         <div class="bg-gray-100 p-6 rounded-lg shadow-lg mb-8">
           <h2 class="text-xl font-semibold text-gray-900 ">
-            {project.data.title}
+            <a href=`/projects/${project.slug}`>
+              {project.data.title}
+            </a>
           </h2>
           <p class="text-sm text-gray-700 my-2">{project.data.date}</p>
           <p class="text-gray-800 mb-2">{project.data.summary}</p>

@@ -1,5 +1,4 @@
 ---
-import type { GetStaticPaths } from "astro";
 // Create a new route for each project in src/content/projects
 // https://docs.astro.build/en/guides/content-collections/#building-for-static-output-default
 
@@ -23,7 +22,7 @@ import Default from "../../layouts/default.astro";
 ---
 
 <Default title={project.data.title}>
-  <a href="/projects" class="mb-8 text-sm">← Back to Projects directory</a>
-  <h1>{project.data.title}</h1>
+  <a href="/projects" class="mb-10 text-sm">← Back to Projects</a>
+  <h1 class="mt-5">{project.data.title}</h1>
   <Content />
 </Default>
