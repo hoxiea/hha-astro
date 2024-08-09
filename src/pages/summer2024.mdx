@@ -1,0 +1,107 @@
+---
+layout: "../layouts/page.astro"
+title: Summer 2024 Update
+maxImageHeight: 300
+---
+
+<div class="mr-9">
+Happy August! As summer draws to a close and the new school year approaches, I thought it would be fun to share a few highlights from the past few months with you.
+
+I hope you and your family had a great summer too!
+
+<div class="text-right">
+<p class="-mb-6">Best wishes,</p>
+<p>Hamilton</p>
+</div>
+</div>
+
+import { Picture } from "astro:assets";
+import manito from "../images/summer2024/manito.jpeg";
+
+<figure class="flex flex-col items-center">
+  <Picture
+    src={manito}
+    formats={["avif", "webp", "jpeg"]}
+    alt="Hamilton and Sam at the gardens in Manito Park, in downtown Spokane."
+    widths={[
+      200,
+      frontmatter.maxImageHeight,
+      frontmatter.maxImageHeight * 2,
+      manito.width,
+    ]}
+    sizes={`(min-width: ${frontmatter.maxImageHeight}px) ${frontmatter.maxImageHeight}px, 100vw`}
+    class={`h-auto max-h-[${frontmatter.maxImageHeight}px] w-auto max-w-full`}
+  />
+  <figcaption class="text-center text-sm mt-2 text-gray-600">
+    Enjoying a beautiful summer evening with Sam at [Manito
+    Park](https://my.spokanecity.org/parks/major/manito/).
+  </figcaption>
+</figure>
+
+TODO: table of contents
+
+## Travel and Hosting
+
+June and early July were busy months of hosting and traveling. Social events included:
+
+### A Family Friend Visits Spokane
+
+A longtime friend of the family (my brother and his son were in Pre-K together at Pine Crest in 1995) was passing through Washington and stayed with us for about 48 hours. Despite the short stay, we managed to squeeze in a couple of great local hikes, including one of our favorites: [Mount Kit Carson](https://www.alltrails.com/ar/trail/us/washington/mount-kit-carson-trail).
+
+TODO: insert pic at the top of the mountain
+
+### My Parents in Spokane and Nelson
+
+In mid-June, my parents came out to visit us. We spent most of their stay up in Nelson, British Columbia, where we hiked and explored the town. We didn't find any native orchids, but we did find a lot of other cool plants and animals!
+
+TODO: insert Pulpit's Rock picture
+
+### Clear Lake and Seattle
+
+In late June, we drove across the state of Washington to spend a few days at Clear Lake, near Mount Rainier, with our good friends and neighbors. We hiked, kayaked, paddle-boarded, watched movies, and enjoyed nightly feasts prepared by Sam and Ande, who are both excellent cooks.
+
+TODO: panorama of Clear Lake
+
+Towards the end of our stay, Sam and I made a day trip into Seattle, one of the largest American cities I had never visited before. We started at Pike's Market, had some killer Thai food on our way over to the Museum of Pop Culture and Space Needle, and then grabbed some great French pastries on our way out of town.
+
+TODOinsert pic of Sam and me at the Public Market Center
+
+### Sam's Sister Visits Spokane
+
+To round out our busy social calendar, Sam's sister came to visit us in early July.
+
+## Building Websites
+
+After helping a college student last semester with a college-level Web Systems course, I kept the momentum going by building a few websites this summer. (You're looking at one of them!)
+
+If you're curious about the details, you can read more about the finished ones at my [Projects page](/projects). There are also a couple more that aren't quite done, so stay tuned!
+
+## Media
+
+### Books
+
+### Shows
+
+#### _The Sopranos_
+
+After occasionally helping a college student last semester with a course about the Italian Mafia, Sam and I were inspired to watch _The Sopranos_, which neither of us had seen and which consistently ranks as one of the best shows ever made.
+
+I'm hardly a scholar of television - my parents paid me to not-watch TV when I was a kid, and the habit mostly stuck! But from what I've read, _The Sopranos_ was the crucible in which the modern [Golden Age of Television](<https://en.wikipedia.org/wiki/Golden_Age_of_Television_(2000s%E2%80%93present)>) was forged. Though I haven't seen many of the "Golden Age" shows, it was evident watching _The Sopranos_ unfold that the writers and producers were actively figuring out how to build compelling character arcs with complex characters, how to pace seasons and what makes a good season finale, etc.
+
+It's aged pretty well, all things considered, though I feel the same way about _The Sopranos_ as I do about The Beatles: glad it happened, but the formula has definitely been refined in the decades since. (And we just started _Breaking Bad_, so I think we'll get to see the refinement in action!)
+
+#### _The Bear_
+
+The sleeper hit of the summer was _The Bear_. I had never heard of it before my parents suggested it, but wow, the first two seasons were good! (Season 3, in contrast, was a huge disappointment. I sincerely hope that Season 4 can salvage the situation 🤞)
+
+#### House of the Dragon
+
+I don't ever expect this to be as good as _Game of Thrones_, but I'll watch it when new episodes drop every few years. It felt like the season finale should have been the penultimate episode - I guess we'll see what happens next in a few more years?
+
+## Learning
+
+I love to learn, and I often use summer vacations as a chance to learn new things. In addition to everything above, I also:
+
+- Reviewed **Financial Accounting** and **Macroeconomics**, getting ready to help students taking these courses in the fall
+
+- Started learning the [Rust](https://www.rust-lang.org/) programming language. I've seen Rust top the Stack Overflow Dev Survey for years ([here it is](https://survey.stackoverflow.co/2024/technology/#admired-and-desired) again as the Most Admired language in the recently-released [2024 survey](https://survey.stackoverflow.co/2024/); it's also consistently Top 20 in the [TIOBE index](https://www.tiobe.com/tiobe-index/)). It seems like a really well-designed language, and I'd love a chance to use it for a project!
