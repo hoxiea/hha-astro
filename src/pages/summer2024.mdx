@@ -15,30 +15,17 @@ I hope you and your family had a great summer too!
 </div>
 </div>
 
-import { Picture } from "astro:assets";
+import CaptionedImage from "../components/Summer2024Image.astro";
 import manito from "../images/summer2024/manito.jpeg";
 
-<figure class="flex flex-col items-center">
-  <Picture
-    src={manito}
-    formats={["avif", "webp", "jpeg"]}
-    alt="Hamilton and Sam at the gardens in Manito Park, in downtown Spokane."
-    widths={[
-      200,
-      frontmatter.maxImageHeight,
-      frontmatter.maxImageHeight * 2,
-      manito.width,
-    ]}
-    sizes={`(min-width: ${frontmatter.maxImageHeight}px) ${frontmatter.maxImageHeight}px, 100vw`}
-    class={`h-auto max-h-[${frontmatter.maxImageHeight}px] w-auto max-w-full`}
-  />
-  <figcaption class="text-center text-sm mt-2 text-gray-600">
-    Enjoying a beautiful summer evening with Sam at [Manito
-    Park](https://my.spokanecity.org/parks/major/manito/).
-  </figcaption>
-</figure>
+<CaptionedImage
+  src={manito}
+  alt="Hamilton and Sam at the gardens in Manito Park, in downtown Spokane."
+  caption="Enjoying a beautiful summer evening with Sam at Manito Park."
+  maxHeight={350}
+/>
 
-TODO: table of contents
+TODO: table of contents?
 
 ## Travel and Hosting
 
@@ -46,29 +33,61 @@ June and early July were busy months of hosting and traveling. Social events inc
 
 ### A Family Friend Visits Spokane
 
-A longtime friend of the family (my brother and his son were in Pre-K together at Pine Crest in 1995) was passing through Washington and stayed with us for about 48 hours. Despite the short stay, we managed to squeeze in a couple of great local hikes, including one of our favorites: [Mount Kit Carson](https://www.alltrails.com/ar/trail/us/washington/mount-kit-carson-trail).
+A longtime friend of the family was passing through Washington and stayed with us for about 48 hours. Despite the short duration, we squeezed in a couple of great local hikes, including one of our favorites: [Mount Kit Carson](https://www.alltrails.com/ar/trail/us/washington/mount-kit-carson-trail).
 
-TODO: insert pic at the top of the mountain
+import david from "../images/summer2024/david.jpeg";
+
+<CaptionedImage
+  src={david}
+  alt="A picturesque view from the top of Mount Kit Carson with Hamilton, Sam, and David in the foreground."
+  caption="Greetings from the top of Mount Kit Carson!"
+  maxHeight={350}
+/>
 
 ### My Parents in Spokane and Nelson
 
 In mid-June, my parents came out to visit us. We spent most of their stay up in Nelson, British Columbia, where we hiked and explored the town. We didn't find any native orchids, but we did find a lot of other cool plants and animals!
 
-TODO: insert Pulpit's Rock picture
+import nelson from "../images/summer2024/nelson.jpeg";
+
+<CaptionedImage
+  src={nelson}
+  alt="A picturesque view from the top of Pulpit's rock with my parents and Sam."
+  caption="Nelson from the top of Pulpit's Rock."
+  maxHeight={400}
+/>
 
 ### Clear Lake and Seattle
 
 In late June, we drove across the state of Washington to spend a few days at Clear Lake, near Mount Rainier, with our good friends and neighbors. We hiked, kayaked, paddle-boarded, watched movies, and enjoyed nightly feasts prepared by Sam and Ande, who are both excellent cooks.
 
-TODO: panorama of Clear Lake
+import clearLake from "../images/summer2024/clear-lake.jpeg";
 
-Towards the end of our stay, Sam and I made a day trip into Seattle, one of the largest American cities I had never visited before. We started at Pike's Market, had some killer Thai food on our way over to the Museum of Pop Culture and Space Needle, and then grabbed some great French pastries on our way out of town.
+<CaptionedImage
+  src={clearLake}
+  alt="A serene picture of Clear Lake at sunrise from the north shore."
+  caption="Sunrise at Clear Lake. Mt. Rainier isn't fair away!"
+  maxHeight={400}
+/>
 
-TODOinsert pic of Sam and me at the Public Market Center
+Towards the end of our stay, Sam and I made a day trip into Seattle, one of the largest American cities I had never visited before. We started at Pike's Place Market, had some killer Thai food on our way over to the Museum of Pop Culture and the Space Needle, and then grabbed some great French pastries on our way out of town.
+
+import seattle from "../images/summer2024/seattle.jpeg";
+
+<CaptionedImage
+  src={seattle}
+  alt="Ham and Sam standing in Pike's Place Market, Seattle, with the Public Market Center sign behind us."
+  caption="Just a chilly, cloudy summer day in Seattle..."
+  maxHeight={350}
+/>
 
 ### Sam's Sister Visits Spokane
 
-To round out our busy social calendar, Sam's sister came to visit us in early July.
+To round out our busy social calendar, Sam's sister came to visit us in early July. We had a blast celebrating the Fourth of July at Lake CDA 🎆, kayaked and swam at Sandpoint, and hiked another one of our favorite local trails ([Iller Creek](https://www.alltrails.com/ar/trail/us/washington/iller-creek-conservation-area-trail)).
+
+import jessy from "../images/summer2024/jessy.jpeg";
+
+<CaptionedImage src={jessy} alt="" caption="" maxHeight={400} />
 
 ## Building Websites
 

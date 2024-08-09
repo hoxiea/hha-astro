@@ -1,0 +1,30 @@
+---
+import { Picture } from "astro:assets";
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  caption?: string;
+  maxHeight?: number;
+}
+
+const { src, alt, caption, maxHeight = 350 } = Astro.props;
+---
+
+<figure class="flex flex-col items-center">
+  <Picture
+    src={src}
+    formats={["avif", "webp", "jpeg"]}
+    alt={alt}
+    widths={[200, maxHeight, maxHeight * 2, src.width]}
+    sizes={`(min-width: ${maxHeight}px) ${maxHeight}px, 100vw`}
+    class={`h-auto max-h-[${maxHeight}px] w-auto max-w-full`}
+  />
+  {
+    caption && (
+      <figcaption class="text-center text-sm mt-2 text-gray-600">
+        {caption}
+      </figcaption>
+    )
+  }
+</figure>
