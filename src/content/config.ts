@@ -9,6 +9,7 @@ const projectCollection = defineCollection({
     date: z.string(),
     summary: z.string(),
     linktext: z.string(),
+    published: z.boolean(),
   }),
 });
 

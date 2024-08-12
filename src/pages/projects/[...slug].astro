@@ -7,10 +7,12 @@ import { getCollection } from "astro:content";
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
   const allProjects = await getCollection("projects");
-  return allProjects.map((project) => ({
-    params: { slug: project.slug },
-    props: { project },
-  }));
+  return allProjects
+    .filter((project) => project.data.published)
+    .map((project) => ({
+      params: { slug: project.slug },
+      props: { project },
+    }));
 }
 
 // 2. For your template, you can get the entry directly from the prop

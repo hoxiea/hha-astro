@@ -1,0 +1,146 @@
+---
+title: A Better Plate-Loading Algorithm
+date: Summer 2024
+summary: I love the StrongLifts app for tracking my strength training workouts, but I'm frustrated by the plate-loading algorithm. Can we do better?
+linktext: Find out here!
+published: false
+---
+
+## Background
+
+In 2023, I got back into heavier strength trainer after a few years of bodyweight exercises, yoga, and rowing. I liked the idea of compound movements and the simplicity of the [StrongLifts 5x5 program](https://stronglifts.com/stronglifts-5x5/), so I decided to give it a try.
+
+I downloaded the StrongLifts app, and it's great! Even using the free version, it was simple to program my workouts and track my progress over time, and the Apple Watch integration is excellent.
+
+import CaptionedImage from "../../components/Summer2024Image.astro";
+
+import appImage from "../../images/stronglifts/app.jpeg";
+
+<CaptionedImage
+  src={appImage}
+  alt="A screenshot of the StrongLifts Weight Lifting app in the Apple Store."
+  caption="Those 73k people aren't wrong - it's a great app!"
+  maxHeight={350}
+/>
+
+As my lifts got heavier and my weight increments got smaller, though, I started to see the appeal of one of the pro features: the **plate calculator**, which tells you which plates to put on the bar.
+
+Now, I love me some good mental math after 15+ years of being a [quantitative tutor](/tutor), but even I don't find it particularly fun trying to figure out how to get 154 pounds onto the barbell with the collection of plates I have.
+
+Enter the **plate calculator**:
+
+import calc154 from "../../images/stronglifts/154.jpeg";
+
+<CaptionedImage
+  src={calc154}
+  alt="A screenshot of the plate calculator, suggesting the weights required to achieve 154lb on the barbell."
+  caption="Good luck getting that right after a set of heavy deadlifts."
+  maxHeight={350}
+/>
+
+Useful, right?
+
+## A Motivating Example of the Problem
+
+Yep, the plate calculator is useful if you're using the same weight for all your sets.
+
+But what if you're doing something like [Reverse Pyramid Training](https://leangains.com/reverse-pyramid-training-guide/), where the weight on the bar decreases from set to set?
+
+I started using reverse pyramids a few months ago to add some rep count variety to my workouts. For example, here are my Barbell Rows for next week:
+
+import rowSets from "../../images/stronglifts/rpt-sets.jpeg";
+
+<CaptionedImage
+  src={rowSets}
+  alt="A screenshot of four sets of barbell rows with increasing rep counts and decreasing weights: 6 x 154lb, 8 x 144lb, 10 x 134lb, and 12 x 124lb."
+  caption="Reps go up, weight goes down."
+  maxHeight={350}
+/>
+
+What's the best way of loading the plates to achieve this sequence of weights?
+
+### Option 1: The Current, Myopic Approach
+
+If you blindly follow the plate calculator, you'll do the following:
+
+- Start with **154** = 45 + 5 + 2.75 + 1.25 + 0.5 (see image above)
+- To get to **144** = 45 + 2.75 + 1.25 + 0.5, you have to:
+  - remove the outermost three plates
+  - remove the 5
+  - reload the outermost three plates
+- To get to **134** = 35 + 5 + 2.75 + 1.25 + 0.5, you have to:
+  - remove _all_ the old plates to get that 45 off
+  - add _all_ the plates
+- To get to **124** = 35 + 2.75 + 1.25 + 0.5, you have to:
+  - remove the outermost three plates
+  - remove the 5
+  - reload the outermost three plates
+
+That's a lot of loading and unloading! 🥵 Is there a better way?
+
+### Option 2: Proposed New Approach
+
+Looking at the numbers above, it quickly becomes clear that we can do much less work by leaving the plates that don't need to change on the inside. Consider this sequence instead:
+
+- **154** = 35 + 2.75 + 1.25 + 0.5 + 10 + 5
+- **144** = 35 + 2.75 + 1.25 + 0.5 + 10
+- **134** = 35 + 2.75 + 1.25 + 0.5 + 5
+- **124** = 35 + 2.75 + 1.25 + 0.5
+
+Same weight sequence, but much easier!
+
+You could argue that I should embrace the inefficient option in the spirit of, you know, doing work while working out. But...
+
+- I'd rather recover during rest periods and then use my strength for more reps!
+- Loading and unloaded lighter plates reduces the risk of injury
+- It's fun to make things more efficient 😜
+
+So let's make things more efficient!
+
+## The Formal Problem
+
+We found a better way to load plates for that exact sequence of weights. But that won't help me when I'm lifting more weight next week. Can we generalize this approach to efficient loading so that it works for any sequence of weights?
+
+In particular, given the following inputs:
+
+- The weight of the bar
+- The available plates, both weight and quantity
+- The sequence of weights to be lifted
+
+Which sequence of plate loadings (assuming at least one exists) is most efficient, i.e. minimizes the amount of weight removed from and added to the bar?
+
+In the example we worked through earlier, our inputs would be:
+
+```
+bar_weight = 45  // standard barbell
+available_plates = {  // plates I own, which StrongLifts knows about
+  45: 4,
+  35: 2,
+  25: 4,
+  15: 4,
+  10: 4,
+  5: 2,
+  2.75: 4,
+  1.25: 4,
+  1: 2,
+  0.75: 2,
+  0.5: 2,
+  0.25: 2,
+}
+weight_sequence = [154, 144, 134, 124]  // weights to be lifted
+```
+
+And for an output, I want:
+
+```
+{
+  154: [35, 2.75, 1.25, 0.5, 10, 5]
+  144: [35, 2.75, 1.25, 0.5, 10]
+  134: [35, 2.75, 1.25, 0.5, 5]
+  124: [35, 2.75, 1.25, 0.5]
+}
+```
+
+But our algorithm should work for any values of `bar_weight`, `available_plates`, and `weight_sequence`!
+
+## An Algorithm

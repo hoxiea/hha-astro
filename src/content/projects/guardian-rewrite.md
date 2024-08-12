@@ -3,6 +3,7 @@ title: Guardian Web App Rewrite
 date: Summer 2024
 summary: Continuing my Summer of Web Programming, I rewrote a small web app that I built many years ago for a pharmacy in South Florida. The app was originally built with PHP and MySQL, and it was showing its age. I decided to rewrite it with a modern tech stack to make it more correct and maintainable.
 linktext: Read more about the new site
+published: true
 ---
 
 ## Summary
