@@ -9,7 +9,9 @@
         "Multivariate Calculus",
         "Intro Statistics & Probability",
         "Statistics for Business",
-        "Linear Regression"
+        "Linear Regression",
+        "Discrete / Finite Math",
+        "Linear Algebra"
       ]
     },
     {
@@ -17,12 +19,13 @@
       "abbreviation": "CompSci",
       "courses": [
         "Data Structures & Algorithms",
-        "Discrete / Finite Math",
         "Web Systems",
         "Software Engineering",
         "Computer Architecture",
         "Artificial Intelligence",
-        "Programming Languages"
+        "Programming Languages",
+        "Operating Systems",
+        "Files & Databases"
       ]
     },
     {
