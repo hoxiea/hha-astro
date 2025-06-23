@@ -8,7 +8,6 @@
         "Calculus 1 & 2",
         "Multivariate Calculus",
         "Intro Statistics & Probability",
-        "Statistics for Business",
         "Linear Regression",
         "Discrete / Finite Math",
         "Linear Algebra"
@@ -29,6 +28,18 @@
       ]
     },
     {
+      "subject": "Business",
+      "abbreviation": "Business",
+      "courses": [
+        "Intro to Finance",
+        "Intro to Business Communication",
+        "Managerial Accounting",
+        "Financial Accounting",
+        "Business Analytics & Statistics",
+        "Operations & Supply Chain Mgmt"
+      ]
+    },
+    {
       "subject": "Data Science / ML",
       "abbreviation": "Data / ML",
       "courses": [
@@ -44,7 +55,8 @@
         "Intro Microeconomics",
         "Psychometrics",
         "Econometrics",
-        "Operations & Supply Chain Mgmt"
+        "Intro to Information Studies",
+        "Human-Computer Interaction"
       ]
     }
   ]
