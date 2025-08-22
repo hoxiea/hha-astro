@@ -1,0 +1,32 @@
+---
+import { Picture } from "astro:assets";
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  maxHeight?: number;
+}
+
+const { src, alt, maxHeight = 350 } = Astro.props;
+const hasCaption = Astro.slots.has("caption");
+---
+
+<figure class="flex flex-col items-center gap-1">
+  <Picture
+    src={src}
+    formats={["avif", "webp", "jpeg"]}
+    alt={alt}
+    widths={[200, maxHeight, maxHeight * 2, src.width]}
+    sizes={`(min-width: ${maxHeight}px) ${maxHeight}px, 100vw`}
+    class={"h-auto w-auto max-w-full"}
+    loading="lazy"
+    decoding="async"
+  />
+  {
+    hasCaption && (
+      <figcaption class="text-center text-sm text-gray-600">
+        <slot name="caption" />
+      </figcaption>
+    )
+  }
+</figure>
