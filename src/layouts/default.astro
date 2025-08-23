@@ -29,6 +29,12 @@ const finalOgImage = ogImage || defaultOgImage;
 
     <meta property="og:image" content={finalOgImage} />
     <meta property="og:image:alt" content={title || "HHAckerman"} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Apple Specific OG Image Tags -->
+    <meta name="apple-mobile-web-app-title" content={pageTitle} />
+    <link rel="apple-touch-icon" href={finalOgImage} />
 
     <link
       rel="apple-touch-icon"
