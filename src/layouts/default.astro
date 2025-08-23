@@ -1,7 +1,7 @@
 ---
 import ResponsiveHeader from "../components/header.astro";
 
-const { title } = Astro.props;
+const { title, ogImage } = Astro.props;
 const { pathname } = Astro.url;
 const isHomePage = pathname === "/";
 let pageTitle;
@@ -10,6 +10,10 @@ if (isHomePage || !title) {
 } else {
   pageTitle = `HHAckerman: ${title}`;
 }
+
+// Set default OG image - for Apple Messages preview
+const defaultOgImage = "/images/headshot-blue-square-600.png";
+const finalOgImage = ogImage || defaultOgImage;
 ---
 
 <html lang="en">
@@ -21,6 +25,10 @@ if (isHomePage || !title) {
       content="The personal webpage of Hamilton Hoxie Ackerman."
     />
     <meta name="generator" content={Astro.generator} />
+
+    <meta property="og:image" content={finalOgImage} />
+    <meta property="og:image:alt" content={title || "HHAckerman"} />
+
     <link
       rel="apple-touch-icon"
       sizes="180x180"

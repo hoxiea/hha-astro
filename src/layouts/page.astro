@@ -3,7 +3,7 @@ import Default from "./default.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<Default title={frontmatter.title}>
+<Default title={frontmatter.title} ogImage={frontmatter.ogImage}>
   <h1>{frontmatter.title}</h1>
   <section>
     <slot />
