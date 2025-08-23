@@ -11,8 +11,8 @@ export default function CourseTabs({ courseInfo }) {
                 key={type.subject}
                 className="max-w-full min-w-max rounded-md py-1 px-3 text-sm/6 font-semibold text-black focus:outline-none data-[selected]:bg-black/10 data-[hover]:bg-black/5 data-[selected]:data-[hover]:bg-black/10 data-[focus]:outline-1 data-[focus]:outline-black"
               >
-                <span class="hidden sm:flex">{type.subject}</span>
-                <span class="flex sm:hidden">{type.abbreviation}</span>
+                <span className="hidden sm:flex">{type.subject}</span>
+                <span className="flex sm:hidden">{type.abbreviation}</span>
               </Tab>
             ))}
           </TabList>
